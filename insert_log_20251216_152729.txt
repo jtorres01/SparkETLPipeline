@@ -1,0 +1,16 @@
+[REJECTED ERROR] invalid input syntax for type integer: "24.0"
+LINE 2: ...58','2014-04-06'::date,'77.9850288261519','299.0','24.0','18...
+                                                             ^
+
+[ERROR] OrderID 58: invalid input syntax for type integer: "24.0"
+LINE 8: ... '2014-04-06'::date, '77.9850288261519', '299.0', '24.0', '1...
+                                                             ^
+
+[REJECTED ERROR] invalid input syntax for type integer: "24.0"
+LINE 2: ...58','2014-04-06'::date,'77.9850288261519','299.0','24.0','18...
+                                                             ^
+
+[ERROR] OrderID 58: invalid input syntax for type integer: "24.0"
+LINE 8: ... '2014-04-06'::date, '77.9850288261519', '299.0', '24.0', '1...
+                                                             ^
+
