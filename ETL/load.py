@@ -1,6 +1,6 @@
 from DataBase.connection import get_db_connection
 
-def insert_row(row, log_file):
+def insert_row(row):
 
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -35,9 +35,7 @@ def insert_row(row, log_file):
             row.Country
         ))
 
-        if cursor.rowcount == 0:
-            log_file.write(f"[DUPLICATE] OrderID {row.OrderID}\n")
-            insert_rejected_row(row, log_file)
+        if cursor.rowcount == 0:            
             conn.commit()
             cursor.close()
             conn.close()
@@ -50,7 +48,7 @@ def insert_row(row, log_file):
 
     except Exception as e:
         cursor.connection.rollback()
-        log_file.write(f"[ERROR] OrderID {row.OrderID}: {e}\n")
+        
 
         conn.commit()
         cursor.close()
@@ -58,7 +56,7 @@ def insert_row(row, log_file):
         return "error"
 
 
-def insert_rejected_row(row, log_file):
+def insert_rejected_row(row):
     conn = get_db_connection()
     cursor = conn.cursor()
 

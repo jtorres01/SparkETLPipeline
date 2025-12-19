@@ -27,6 +27,7 @@ DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
+
 # -----------------------------------------------------------
 # CONFIG
 # -----------------------------------------------------------
@@ -321,7 +322,7 @@ def main():
     log_filename = f"insert_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
     log_file = open(log_filename, "w", encoding="utf-8")
 
-
+    print()
     setup_tables()
 
     conn = get_db_connection()
