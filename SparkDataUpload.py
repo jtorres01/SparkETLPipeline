@@ -131,7 +131,7 @@ def setup_tables():
     cursor = conn.cursor()
 
     print("Dropping existing tables if any...")    
-    cursor.execute("DROP TABLE orderhistory;")
+    cursor.execute("DROP TABLE IF EXISTS orderhistory;")
     cursor.execute("DROP TABLE rejecteddata;")
 
 

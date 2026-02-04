@@ -11,8 +11,10 @@ spark = (SparkSession.builder
          .getOrCreate()
 )
 
+spark.conf.set("spark.sql.ansi.enabled", "false")
+
 def main():
-    df = load_file(spark, "Dataset50.csv")
+    df = load_file(spark, "DatasetMessy.csv")
     df = clean_data(df)
 
     setup_tables()

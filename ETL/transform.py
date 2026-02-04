@@ -7,7 +7,7 @@ def clean_data(df):
         df = df.withColumnRenamed(c, c.strip())
 
     # Trim string columns
-    for c, t in df.dtypes:
+    for c, t in df.dtypes: 
         if t == "string":
             df = df.withColumn(c, trim(col(c)))
 
